@@ -32,7 +32,7 @@ export default function WhyChooseUsSection() {
                 Excellence in Every Yard
               </p>
               <p className="mt-6 text-lg text-green-100">
-                With Wicho Landscaping, you're choosing a team committed to quality, care, and personal service.
+                With Wicho Landscaping, you are choosing a team committed to quality, care, and personal service.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base text-green-200 lg:max-w-none">
                 {features.map((feature) => (
