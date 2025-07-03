@@ -1,0 +1,56 @@
+import React from 'react';
+
+export default function SecondaryCTA() {
+  return (
+    <div className="bg-white">
+      <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div className="relative isolate overflow-hidden bg-green-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+          <svg
+            viewBox="0 0 1024 1024"
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+          >
+            <circle
+              r={512}
+              cx={512}
+              cy={512}
+              fill="url(#natureGradient)"
+              fillOpacity="0.7"
+            />
+            <defs>
+              <radialGradient id="natureGradient">
+                <stop stopColor="#4caf50" />
+                <stop offset={1} stopColor="#2e7d32" />
+              </radialGradient>
+            </defs>
+          </svg>
+          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-balance text-green-100 sm:text-4xl">
+              Make Your Yard Stand Out
+            </h2>
+            <p className="mt-6 text-lg/8 text-pretty text-gray-200">
+              We’ll make your outdoor space look amazing — and you’ll save.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+              <a
+                href="#"
+                className="rounded-md bg-green-100 px-3.5 py-2.5 text-sm font-semibold text-green-900 shadow-xs hover:bg-green-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300"
+              >
+                Let’s Beautify My Garden
+              </a>
+            </div>
+          </div>
+          <div className="relative mt-12 w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]">
+            <img
+              alt="App screenshot"
+              src="/landscaping1.webp"
+              width={1824}
+              height={1080}
+              className="absolute inset-0 w-full h-full object-cover rounded-md shadow-lg ring-1 ring-green-900/30"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
