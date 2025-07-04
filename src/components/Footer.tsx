@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+          <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="font-light text-sm space-y-2">
             {footerDetails.quickLinks.map((link) => (
               <li key={link.text}>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div id="contact">
-          <h4 className="text-lg font-semibold mb-4">Contáctanos</h4>
+          <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
           <div className="flex flex-col gap-2">
             {footerDetails.Address && (
               <a
@@ -93,11 +93,11 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-sm font-light hover:text-green-400 transition"
               >
-                Dirección: {footerDetails.Address}
+                Address: {footerDetails.Address}
               </a>
             )}
             {footerDetails.Horario && (
-              <span className="text-sm font-light">Horario: {footerDetails.Horario}</span>
+              <span className="text-sm font-light">Hours: {footerDetails.Horario}</span>
             )}
             {footerDetails.email && (
               <a
