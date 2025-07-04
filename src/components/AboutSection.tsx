@@ -1,11 +1,5 @@
 'use client'
 
-const links = [
-  { name: 'Request a Free Quote', href: '#' },
-  { name: 'Our Services', href: '#' },
-  { name: 'Customer Testimonials', href: '#' },
-  { name: 'Photo Gallery', href: '#' },
-]
 const stats = [
   { name: 'Happy Clients', value: '250+' },
   { name: 'Gardens Designed', value: '180+' },
