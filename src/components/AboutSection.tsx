@@ -1,5 +1,7 @@
 'use client'
 
+import { motion } from 'framer-motion'
+
 const stats = [
   { name: 'Happy Clients', value: '250+' },
   { name: 'Gardens Designed', value: '180+' },
@@ -11,7 +13,8 @@ export default function AboutWithStats() {
   return (
     <div id="about" className="relative isolate overflow-hidden bg-green-900 py-24 sm:py-32">
      
-     <div className="absolute inset-0 -z-10 bg-gradient-to-br from-green-200/30 to-transparent"></div>
+      {/* FONDOS DECORATIVOS */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-green-200/30 to-transparent"></div>
       <div
         aria-hidden="true"
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
@@ -36,7 +39,15 @@ export default function AboutWithStats() {
           className="aspect-1097/845 w-[68.5rem] opacity-20"
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+      {/* CONTENIDO PRINCIPAL ANIMADO */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
+        className="mx-auto max-w-7xl px-6 lg:px-8"
+      >
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">About Us</h2>
           <p className="mt-8 text-lg font-medium text-pretty text-left text-green-200 sm:text-xl/8">
@@ -47,7 +58,6 @@ export default function AboutWithStats() {
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-         
           <dl className="mt-16 grid grid-cols-2 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse gap-1">
@@ -57,7 +67,7 @@ export default function AboutWithStats() {
             ))}
           </dl>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const faqs = [
   {
@@ -24,12 +25,12 @@ export default function FAQSection() {
   }
 
   return (
-    <section id= "faq" className="relative isolate overflow-hidden bg-green-50 py-24 px-6 font-sans">
+    <section id="faq" className="relative isolate overflow-hidden bg-green-50 py-24 px-6 font-sans">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-gray-800 mb-4">F.A.Q</p>
           <h2 className="sm:text-4xl text-3xl font-extrabold text-gray-900">
-            Frequently Asked Questions
+            Frequently Asked <span className="text-green-600">Questions</span>
           </h2>
         </div>
         <ul className="basis-1/2">
@@ -61,15 +62,26 @@ export default function FAQSection() {
                   />
                 </svg>
               </button>
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  activeIndex === index ? 'max-h-40' : 'max-h-0'
-                }`}
-              >
-                <div className="pb-5 leading-relaxed text-gray-800">
-                  {faq.a}
-                </div>
-              </div>
+
+              {/* Animación con framer-motion */}
+              <AnimatePresence initial={false}>
+                {activeIndex === index && (
+                  <motion.div
+                    key="content"
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={{
+                      open: { opacity: 1, height: 'auto' },
+                      collapsed: { opacity: 0, height: 0 },
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pb-5 leading-relaxed text-gray-800">{faq.a}</div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </li>
           ))}
         </ul>

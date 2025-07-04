@@ -49,7 +49,7 @@ export default function HowItWorks() {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-10">How It Works</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-10">How It <span className="text-green-600">Works</span></h2>
 
         {/* Contenedor animado */}
         <motion.div

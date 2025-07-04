@@ -1,10 +1,13 @@
-import React from 'react';
+'use client'
+
+import { motion } from 'framer-motion'
 
 export default function SecondaryCTA() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="relative isolate overflow-hidden bg-green-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+
           <svg
             viewBox="0 0 1024 1024"
             aria-hidden="true"
@@ -24,9 +27,16 @@ export default function SecondaryCTA() {
               </radialGradient>
             </defs>
           </svg>
-          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+
+          {/* Texto + Botón: fade + slide desde izquierda */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left"
+          >
             <h2 className="text-3xl font-semibold tracking-tight text-balance text-green-100 sm:text-4xl">
-              Make Your Yard Stand Out
+              Make Your Yard <span className="text-green-600">Stand Out</span>
             </h2>
             <p className="mt-6 text-lg/8 text-pretty text-gray-200">
               We’ll make your outdoor space look amazing — and you’ll save.
@@ -39,8 +49,15 @@ export default function SecondaryCTA() {
                 Let’s Beautify My Garden
               </a>
             </div>
-          </div>
-          <div className="relative mt-12 w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]">
+          </motion.div>
+
+          {/* Imagen: zoom in suave */}
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="relative mt-12 w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]"
+          >
             <img
               alt="App screenshot"
               src="/landscaping1.webp"
@@ -48,9 +65,9 @@ export default function SecondaryCTA() {
               height={1080}
               className="absolute inset-0 w-full h-full object-cover rounded-md shadow-lg ring-1 ring-green-900/30"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
-  );
+  )
 }

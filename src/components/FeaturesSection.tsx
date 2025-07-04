@@ -1,6 +1,7 @@
 'use client'
 
 import { Leaf, Sparkles, Phone } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const features = [
   {
@@ -25,7 +26,15 @@ export default function WhyChooseUsSection() {
     <div className="overflow-hidden bg-green-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pt-4 lg:pr-8">
+          
+          {/* ANIMATED TEXT SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+            className="lg:pt-4 lg:pr-8"
+          >
             <div className="lg:max-w-lg">
               <h2 className="text-base font-semibold text-lime-300">Why Choose Us?</h2>
               <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -44,7 +53,9 @@ export default function WhyChooseUsSection() {
                 ))}
               </dl>
             </div>
-          </div>
+          </motion.div>
+
+          {/* IMAGE SECTION */}
           <img
             src="/Garden-Landscaping.jpg"
             alt="Landscaping"
