@@ -5,8 +5,9 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Services', href: '#services' },
-  { name: 'Gallery', href: '#gallery' },
+  { name: 'Our Services', href: '#services' },
+  { name: 'Our Work', href: '#gallery' },
+  { name: 'Preguntas Frecuentes', href: '#faq' },
   { name: 'About Us', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ]
@@ -58,13 +59,14 @@ export default function HeroSection() {
                   <a
                     key={item.name}
                     href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
                   >
                     {item.name}
                   </a>
                 ))}
                 <a
-                  href="#quote"
+                  href="tel:7864519573"
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
                 >
                   Request a Free Quote
@@ -80,13 +82,13 @@ export default function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
           Transform Your Outdoor Space with Wicho Landscaping
           </h1>
-          <p className="mt-6 text-lg leading-8">
+          <p className="mt-6 text-lg leading-8 text-white">
           Expert garden design, maintenance, and irrigation services that bring your dream yard to life.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="#quote"
-              className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-100"
+              href="tel:7864519573"
+              className="rounded-md bg-green-100 px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-100"
             >
               Request a Free Quote
             </a>

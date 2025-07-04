@@ -10,6 +10,20 @@ import {
   Sprout
 } from 'lucide-react'
 import React from 'react'
+import { motion } from 'framer-motion'
+
+const cardVariants = {
+  offscreen: { opacity: 0, y: 50 },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 80,
+      damping: 18,
+    },
+  },
+}
 
 export default function OurServices() {
   const services = [
@@ -59,17 +73,20 @@ export default function OurServices() {
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex flex-col items-center rounded-xl bg-green-50 p-6 text-center shadow-md hover:shadow-lg transition"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={cardVariants}
             >
               <span className="inline-block rounded-full bg-green-100 p-3 text-green-600">
                 {service.icon}
               </span>
               <h2 className="mt-3 text-xl font-semibold text-gray-700">{service.title}</h2>
               <p className="mt-2 text-gray-500">{service.description}</p>
-              
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

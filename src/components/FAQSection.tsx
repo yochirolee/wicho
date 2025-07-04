@@ -24,18 +24,20 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="relative isolate overflow-hidden bg-green-50 py-24 px-6">
+    <section id= "faq" className="relative isolate overflow-hidden bg-green-50 py-24 px-6 font-sans">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-gray-800 mb-4">F.A.Q</p>
-          <h2 className="sm:text-4xl text-3xl font-extrabold text-grey-900">Frequently Asked Questions</h2>
+          <h2 className="sm:text-4xl text-3xl font-extrabold text-gray-900">
+            Frequently Asked Questions
+          </h2>
         </div>
         <ul className="basis-1/2">
           {faqs.map((faq, index) => (
             <li key={index} className="group border-t border-green-300">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left text-grey-500 md:text-lg"
+                className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left text-gray-900 md:text-lg"
                 aria-expanded={activeIndex === index}
               >
                 <span className="flex-1">{faq.q}</span>
@@ -64,13 +66,12 @@ export default function FAQSection() {
                   activeIndex === index ? 'max-h-40' : 'max-h-0'
                 }`}
               >
-                <div className="pb-5 leading-relaxed text-grey-800">
+                <div className="pb-5 leading-relaxed text-gray-800">
                   {faq.a}
                 </div>
               </div>
             </li>
           ))}
-         
         </ul>
       </div>
     </section>

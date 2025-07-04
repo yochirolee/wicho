@@ -13,9 +13,11 @@ const images = [
 ];
 
 const Gallery = () => (
-  <section className="bg-white py-20 px-6">
+  <section id="gallery" className="bg-white py-20 px-6">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-green-700 mb-12">Our Work</h2>
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+      Our <span className="text-green-600">Work</span>
+      </h2>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {images.map((src, idx) => (
           <div
@@ -28,7 +30,6 @@ const Gallery = () => (
               className="w-full h-64 object-cover
                          transform
                          transition-transform duration-500 ease-in-out
-                         animate-[pulse_6s_ease-in-out_infinite]
                          hover:scale-110
                          hover:animate-none"
             />

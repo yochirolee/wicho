@@ -12,14 +12,14 @@ const siteDetails = {
 const footerDetails = {
   subheading: "Transformamos tu jardín en un espacio único y natural.",
   quickLinks: [
-    { text: "Inicio", url: "/" },
-    { text: "Servicios", url: "/services" },
-    { text: "Sobre Nosotros", url: "/about" },
-    { text: "Contacto", url: "/contact" },
+    { text: "Inicio", url: "#" },
+    { text: "Servicios", url: "#services" },
+    { text: "Sobre Nosotros", url: "#about" },
+    { text: "Contacto", url: "#contact" },
   ],
   Address: "123 Garden St, Miami, FL",
   Horario: "Lunes - Viernes: 8am - 6pm",
-  email: "info@wicholandscaping.com",
+  email: "leidivioleta@gmail.com",
   telephone: "+1 (305) 851-3004",
   socials: {
     Twitter: "https://twitter.com/wicholandscap",
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        <div>
+        <div id="contact">
           <h4 className="text-lg font-semibold mb-4">Contáctanos</h4>
           <div className="flex flex-col gap-2">
             {footerDetails.Address && (
@@ -101,11 +101,11 @@ const Footer: React.FC = () => {
             )}
             {footerDetails.email && (
               <a
-                href={`mailto:${footerDetails.email}`}
-                className="text-sm font-light hover:text-green-400 transition"
-              >
-                Email: {footerDetails.email}
-              </a>
+              href={`mailto:${footerDetails.email}`}
+              className="text-sm font-light hover:text-green-400 transition"
+            >
+              Email: leidivioleta@gmail.com
+            </a>
             )}
             {footerDetails.telephone && (
               <a
