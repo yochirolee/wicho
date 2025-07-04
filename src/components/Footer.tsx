@@ -10,15 +10,15 @@ const siteDetails = {
 };
 
 const footerDetails = {
-  subheading: "Transformamos tu jardín en un espacio único y natural.",
+  subheading: "We transform your garden into a unique and natural space.",
   quickLinks: [
-    { text: "Inicio", url: "#" },
-    { text: "Servicios", url: "#services" },
-    { text: "Sobre Nosotros", url: "#about" },
-    { text: "Contacto", url: "#contact" },
+    { text: "Home", url: "#" },
+    { text: "Services", url: "#services" },
+    { text: "About Us", url: "#about" },
+    { text: "Contact", url: "#contact" },
   ],
   Address: "123 Garden St, Miami, FL",
-  Horario: "Lunes - Viernes: 8am - 6pm",
+  Horario: "Monday - Saturday: 8am - 6pm",
   email: "leidivioleta@gmail.com",
   telephone: "+1 (305) 851-3004",
   socials: {
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                 href={`tel:${footerDetails.telephone}`}
                 className="text-sm font-light hover:text-green-400 transition"
               >
-                Teléfono: {footerDetails.telephone}
+                Phone: {footerDetails.telephone}
               </a>
             )}
           </div>
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="mt-8 text-center text-white text-xs px-6">
-        &copy; {new Date().getFullYear()} {siteDetails.siteName}. Todos los derechos reservados.
+        &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.
       </div>
     </footer>
   );
