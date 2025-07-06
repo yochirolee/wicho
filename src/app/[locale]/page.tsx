@@ -9,15 +9,8 @@ import FAQSection from "../../components/FAQSection";
 import SecondaryCTA from "../../components/SecondaryCTA";
 import Footer from "../../components/Footer";
 
-// ✅ Usa el tipo PageProps si estás usando Next.js 13+ con app directory
-type PageProps = {
-  params: {
-    locale: string
-  }
-}
-
-export default async function Home({ params: { locale } }: PageProps) {
-  const dict = await getDictionary(locale)
+export default async function Home({ params }: { params: { locale: string } }) {
+  const dict = await getDictionary(params.locale)
 
   return (
     <div className="flex flex-col min-h-screen">
