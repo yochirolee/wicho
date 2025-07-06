@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "work": "Nuestro Trabajo",
+    "services": "Servicios",
+    "about": "Acerca de Nosotros",
+    "faq": "Preguntas Frecuentes",
+    "contact": "Contáctanos"
+  },
+  "hero": {
+    "headline": "Transforma tu espacio exterior con Wicho Landscaping",
+    "subtext": "Expertos en diseño de jardines, mantenimiento y sistemas de riego que hacen realidad el jardín de tus sueños.",
+    "quote": "Solicita una cotización gratis",
+    "view": "Ver Nuestro Trabajo"
+  },
+  "offerSection": {
+    "headline": "Nuestro",
+    "headline2": "Trabajo"
+  },
+  "socialProof": {
+  "title": "Explora nuestros increíbles",
+  "title2": "Servicios",
+  "services": [
+    {
+      "title": "Diseño de Jardines",
+      "description": "Diseños personalizados de jardines adaptados a tu espacio."
+    },
+    {
+      "title": "Instalación de Mulch",
+      "description": "Protege tu suelo y mejora el atractivo exterior con mulch de calidad."
+    },
+    {
+      "title": "Mantenimiento de Jardines",
+      "description": "Mantén tu jardín vibrante y bien cuidado durante todo el año."
+    },
+    {
+      "title": "Diseño de Iluminación de Jardines",
+      "description": "Agrega elegancia y seguridad con iluminación profesional."
+    },
+    {
+      "title": "Diseño de Bordes de Césped",
+      "description": "Bordes de césped nítidos y limpios que realzan tu patio."
+    },
+    {
+      "title": "Corte y Planificación de Césped",
+      "description": "Estrategias inteligentes de corte y distribución para céspedes perfectos."
+    },
+    {
+      "title": "Sistema de Riego",
+      "description": "Sistemas de riego automatizados para mantener tus plantas saludables."
+    }
+  ]
+},
+"whyChooseUs": {
+    "title": "¿Por qué elegirnos?",
+    "headline": "Excelencia en cada jardín",
+    "description": "Con Wicho Landscaping, eliges un equipo comprometido con la calidad, el cuidado y el servicio personalizado.",
+    "features": [
+      {
+        "name": "Paisajismo Profesional",
+        "description": "Desde el diseño hasta el mantenimiento, nos encargamos de todo con cuidado y experiencia."
+      },
+      {
+        "name": "Trabajo Limpio y Preciso",
+        "description": "Dejamos tu jardín impecable y tu césped perfectamente cortado."
+      },
+      {
+        "name": "Servicio Personalizado",
+        "description": "Atención directa y presupuestos gratuitos adaptados a tus necesidades."
+      }
+    ]
+  },
+"howItWorks": {
+  "title": "Cómo",
+  "title2": "Funciona",
+  "steps": [
+    {
+      "title": "1. Solicita una Cotización Gratis",
+      "description": "Cuéntanos tus necesidades de jardinería y te daremos una cotización sin compromiso."
+    },
+    {
+      "title": "2. Programa tu Servicio",
+      "description": "Acordamos un horario conveniente para realizar tu proyecto de jardín o césped."
+    },
+    {
+      "title": "3. Disfruta de un Jardín Hermoso",
+      "description": "Llegamos a tiempo y entregamos un trabajo de jardinería de alta calidad — satisfacción garantizada."
+    }
+  ]
+},
+"about": {
+    "title": "Acerca de Nosotros",
+    "description": "En ",
+    "description2": "Wicho Landscaping",
+    "description3": " aportamos pasión, precisión y profesionalismo a cada espacio exterior. Con años de experiencia en diseño de jardines, mantenimiento y cuidado del césped, estamos comprometidos en ayudarte a crear un ambiente hermoso, funcional y relajante justo en la puerta de tu casa. Ya sea que necesites un simple recorte o una renovación completa del jardín, estamos aquí para entregar resultados que te encantarán, a tiempo y dentro del presupuesto.",
+    "stats": [
+      { "name": "Clientes Satisfechos", "value": "250+" },
+      { "name": "Jardines Diseñados", "value": "180+" },
+      { "name": "Mantenimientos Semanales", "value": "100+" },
+      { "name": "Años de Experiencia", "value": "10+" }
+    ]
+  },
+  "faq": {
+  "label": "FAQ",
+  "title1": "Preguntas",
+  "title2": "Frecuentes",
+  "questions": [
+    {
+      "q": "¿Qué servicios de jardinería ofrecen?",
+      "a": "Ofrecemos diseño de jardines, instalación de mulch, mantenimiento de jardines, iluminación, bordes de césped, corte y planificación del césped, y sistemas de riego."
+    },
+    {
+      "q": "¿Cómo solicito una cotización gratuita?",
+      "a": "Puedes solicitar una cotización gratuita llenando nuestro formulario de contacto o llamando al (305) 851-3004 o (754) 313-3140."
+    },
+    {
+      "q": "¿Atienden mi área?",
+      "a": "Servimos con orgullo al sur de Florida y zonas cercanas. Contáctanos para confirmar disponibilidad en tu ubicación."
+    }
+  ]
+},
+"secondaryCTA": {
+  "title1": "Haz que tu jardín",
+  "title2": "resalte",
+  "description": "Haremos que tu espacio exterior luzca increíble — y además ahorrarás.",
+  "button": "Embellece mi jardín"
+},
+"footer": {
+  "subheading": "Transformamos tu jardín en un espacio único y natural.",
+  "quickLinksTitle": "Enlaces Rápidos",
+  "addressLabel": "Dirección",
+  "hoursLabel": "Horario",
+  "emailLabel": "Correo",
+  "phoneLabel": "Teléfono",
+  "contactTitle": "Contáctanos",
+  "copyright": "Todos los derechos reservados."
+}
+}

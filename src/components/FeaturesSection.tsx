@@ -3,25 +3,24 @@
 import { Leaf, Sparkles, Phone } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-const features = [
-  {
-    name: 'Professional Landscaping',
-    description: 'From design to maintenance, we handle it all with care and expertise.',
-    icon: Leaf,
+const featuresVariants = {
+  offscreen: { opacity: 0, y: 50 },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 80,
+      damping: 18,
+    },
   },
-  {
-    name: 'Clean & Precise Work',
-    description: 'We leave your yard spotless and your lawn perfectly trimmed.',
-    icon: Sparkles,
-  },
-  {
-    name: 'Personalized Service',
-    description: 'Direct attention and free estimates tailored to your needs.',
-    icon: Phone,
-  },
-]
+}
 
-export default function WhyChooseUsSection() {
+export default function WhyChooseUsSection({ dict }: { dict: any }) {
+  const features = dict?.whyChooseUs?.features ?? []
+
+  const icons = [Leaf, Sparkles, Phone]
+
   return (
     <div className="overflow-hidden bg-green-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -36,21 +35,24 @@ export default function WhyChooseUsSection() {
             className="lg:pt-4 lg:pr-8"
           >
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold text-lime-300">Why Choose Us?</h2>
+              <h2 className="text-base font-semibold text-lime-300">{dict.whyChooseUs.title}</h2>
               <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                Excellence in Every Yard
+                {dict.whyChooseUs.headline}
               </p>
               <p className="mt-6 text-lg text-green-100">
-                With Wicho Landscaping, you are choosing a team committed to quality, care, and personal service.
+                {dict.whyChooseUs.description}
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base text-green-200 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-10">
-                    <feature.icon className="absolute top-1 left-1 h-6 w-6 text-lime-300" aria-hidden="true" />
-                    <dt className="inline font-semibold text-white">{feature.name}</dt>{' '}
-                    <dd className="inline">— {feature.description}</dd>
-                  </div>
-                ))}
+                {features.map((feature: any, index: number) => {
+                  const Icon = icons[index]
+                  return (
+                    <div key={feature.name} className="relative pl-10">
+                      <Icon className="absolute top-1 left-1 h-6 w-6 text-lime-300" aria-hidden="true" />
+                      <dt className="inline font-semibold text-white">{feature.name}</dt>{' '}
+                      <dd className="inline">— {feature.description}</dd>
+                    </div>
+                  )
+                })}
               </dl>
             </div>
           </motion.div>

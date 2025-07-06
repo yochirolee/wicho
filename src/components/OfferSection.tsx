@@ -12,11 +12,11 @@ const images = [
   '/logo7.jpeg',
 ];
 
-const Gallery = () => (
+const Gallery = ({ dict }: { dict: any }) => (
   <section id="gallery" className="bg-white py-20 px-6">
     <div className="max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-      Our <span className="text-green-600">Work</span>
+      {dict.offerSection.headline} <span className="text-green-600"> {dict.offerSection.headline2}</span>
       </h2>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {images.map((src, idx) => (

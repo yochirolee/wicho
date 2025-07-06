@@ -2,39 +2,31 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const faqs = [
-  {
-    q: 'What landscaping services do you offer?',
-    a: 'We provide garden design, mulch installation, garden maintenance, lighting design, grass lining, grass cutting & planning, and irrigation systems.',
-  },
-  {
-    q: 'How do I request a free quote?',
-    a: 'You can request a free quote by filling out our contact form or calling us at (305) 851-3004 or (754) 313-3140.',
-  },
-  {
-    q: 'Do you service my area?',
-    a: 'We proudly serve South Florida and nearby areas. Contact us to confirm availability in your location.',
-  },
-]
+type Props = {
+  dict: any
+}
 
-export default function FAQSection() {
+export default function FAQSection({ dict }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index)
   }
 
+  const faqs = dict.faq.questions
+
   return (
     <section id="faq" className="relative isolate overflow-hidden bg-green-50 py-24 px-6 font-sans">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
-          <p className="inline-block font-semibold text-gray-800 mb-4">F.A.Q</p>
+          <p className="inline-block font-semibold text-gray-800 mb-4">{dict.faq.label}</p>
           <h2 className="sm:text-4xl text-3xl font-extrabold text-gray-900">
-            Frequently Asked <span className="text-green-600">Questions</span>
+            {dict.faq.title1} <span className="text-green-600">{dict.faq.title2}</span>
           </h2>
         </div>
+
         <ul className="basis-1/2">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq: any, index: number) => (
             <li key={index} className="group border-t border-green-300">
               <button
                 onClick={() => toggleFAQ(index)}
@@ -63,7 +55,6 @@ export default function FAQSection() {
                 </svg>
               </button>
 
-              {/* Animación con framer-motion */}
               <AnimatePresence initial={false}>
                 {activeIndex === index && (
                   <motion.div

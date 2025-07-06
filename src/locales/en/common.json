@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "work": "Our Work",
+    "services": "Our Services",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Transform your outdoor space with Wicho Landscaping",
+    "subtext": "Expert garden design, maintenance, and irrigation services that bring your dream yard to life.",
+    "quote": "Request a Free Quote",
+    "view": "View Our Work"
+  },
+  "offerSection": {
+    "headline": "Our",
+    "headline2": "Work"
+  },
+  "socialProof": {
+    "title": "Explore our awesome",
+    "title2": "Services",
+    "services": [
+      {
+        "title": "Garden Design",
+        "description": "Beautiful custom garden layouts designed to suit your space."
+      },
+      {
+        "title": "Mulch Installation",
+        "description": "Protect your soil and improve curb appeal with quality mulch."
+      },
+      {
+        "title": "Garden Maintenance",
+        "description": "Keep your garden vibrant and well-trimmed year-round."
+      },
+      {
+        "title": "Garden Lighting Design",
+        "description": "Add elegance and security with professional lighting."
+      },
+      {
+        "title": "Grass Lining Design",
+        "description": "Crisp, clean lawn borders that elevate your yard."
+      },
+      {
+        "title": "Grass Cutting & Planning",
+        "description": "Smart mowing and layout strategies for perfect lawns."
+      },
+      {
+        "title": "Irrigation System",
+        "description": "Automated watering systems to keep your plants thriving."
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us?",
+    "headline": "Excellence in Every Yard",
+    "description": "With Wicho Landscaping, you are choosing a team committed to quality, care, and personal service.",
+    "features": [
+      {
+        "name": "Professional Landscaping",
+        "description": "From design to maintenance, we handle it all with care and expertise."
+      },
+      {
+        "name": "Clean & Precise Work",
+        "description": "We leave your yard spotless and your lawn perfectly trimmed."
+      },
+      {
+        "name": "Personalized Service",
+        "description": "Direct attention and free estimates tailored to your needs."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It",
+    "title2": "Works",
+    "steps": [
+      {
+        "title": "1. Request a Free Estimate",
+        "description": "Tell us about your landscaping needs and we'll give you a no-obligation quote."
+      },
+      {
+        "title": "2. Schedule Your Service",
+        "description": "We agree on a convenient time to complete your garden or lawn project."
+      },
+      {
+        "title": "3. Enjoy a Beautiful Yard",
+        "description": "We show up on time and deliver high-quality landscaping work — satisfaction guaranteed."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "description": "At ",
+    "description2": "Wicho Landscaping",
+    "description3": " we bring passion, precision, and professionalism to every outdoor space. With years of experience in garden design, maintenance, and lawn care, we’re committed to helping you create a beautiful, functional, and relaxing environment right outside your door. Whether you need a simple trim or a complete garden makeover, we’re here to deliver results you’ll love — on time and on budget.",
+    "stats": [
+      { "name": "Happy Clients", "value": "250+" },
+      { "name": "Gardens Designed", "value": "180+" },
+      { "name": "Weekly Maintenances", "value": "100+" },
+      { "name": "Years of Experience", "value": "10+" }
+    ]
+  },
+  "faq": {
+  "label": "F.A.Q",
+  "title1": "Frequently Asked",
+  "title2": "Questions",
+  "questions": [
+    {
+      "q": "What landscaping services do you offer?",
+      "a": "We provide garden design, mulch installation, garden maintenance, lighting design, grass lining, grass cutting & planning, and irrigation systems."
+    },
+    {
+      "q": "How do I request a free quote?",
+      "a": "You can request a free quote by filling out our contact form or calling us at (305) 851-3004 or (754) 313-3140."
+    },
+    {
+      "q": "Do you service my area?",
+      "a": "We proudly serve South Florida and nearby areas. Contact us to confirm availability in your location."
+    }
+  ]
+},
+"secondaryCTA": {
+  "title1": "Make Your Yard",
+  "title2": "Stand Out",
+  "description": "We’ll make your outdoor space look amazing — and you’ll save.",
+  "button": "Let’s Beautify My Garden"
+},
+"footer": {
+  "subheading": "We transform your garden into a unique and natural space.",
+  "quickLinksTitle": "Quick Links",
+  "addressLabel": "Address",
+  "hoursLabel": "Hours",
+  "emailLabel": "Email",
+  "phoneLabel": "Phone",
+  "contactTitle": "Contact Us",
+  "copyright": "All rights reserved."
+}
+}

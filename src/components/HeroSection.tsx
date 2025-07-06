@@ -1,3 +1,4 @@
+// app/[locale]/components/HeroSection.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -5,31 +6,22 @@ import { motion, useAnimation } from 'framer-motion'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Our Work', href: '#gallery' },
-  { name: 'Our Services', href: '#services' },  
-  { name: 'About Us', href: '#about' },
-  { name: 'Preguntas Frecuentes', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
-]
-
-export default function HeroSection() {
+export default function HeroSection({ dict }: { dict: any }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const textControls = useAnimation()
   const linksControls = useAnimation()
 
-  useEffect(() => {
-    textControls.start({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.3 },
-    })
+  const navigation = [
+    { name: dict.nav.work, href: '#gallery' },
+    { name: dict.nav.services, href: '#services' },
+    { name: dict.nav.about, href: '#about' },
+    { name: dict.nav.faq, href: '#faq' },
+    { name: dict.nav.contact, href: '#contact' },
+  ]
 
-    linksControls.start({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 1.1 },
-    })
+  useEffect(() => {
+    textControls.start({ opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.3 } })
+    linksControls.start({ opacity: 1, y: 0, transition: { duration: 0.7, delay: 1.1 } })
   }, [textControls, linksControls])
 
   return (
@@ -38,14 +30,11 @@ export default function HeroSection() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-            <motion.img
-              src="/logo.png"
-              alt="Wicho Landscaping"
-              className="h-10 w-auto"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            />
+              <motion.img src="/logo.png" alt="Wicho Landscaping" className="h-10 w-auto"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -99,7 +88,7 @@ export default function HeroSection() {
                   href="tel:7864519573"
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
                 >
-                  Request a Free Quote
+                  {dict.hero.quote}
                 </a>
               </div>
             </div>
@@ -114,14 +103,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={textControls}
           >
-            Transform Your Outdoor Space with Wicho Landscaping
+            {dict.hero.headline}
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={textControls}
           >
-            Expert garden design, maintenance, and irrigation services that bring your dream yard to life.
+            {dict.hero.subtext}
           </motion.p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <motion.a
@@ -130,7 +119,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={linksControls}
             >
-              Request a Free Quote
+              {dict.hero.quote}
             </motion.a>
             <motion.a
               href="#gallery"
@@ -138,7 +127,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={linksControls}
             >
-              View Our Work <span aria-hidden="true">→</span>
+              {dict.hero.view} <span aria-hidden="true">→</span>
             </motion.a>
           </div>
         </div>

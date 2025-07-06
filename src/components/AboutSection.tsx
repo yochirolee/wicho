@@ -2,18 +2,17 @@
 
 import { motion } from 'framer-motion'
 
-const stats = [
-  { name: 'Happy Clients', value: '250+' },
-  { name: 'Gardens Designed', value: '180+' },
-  { name: 'Weekly Maintenances', value: '100+' },
-  { name: 'Years of Experience', value: '10+' },
-]
+type Props = {
+  dict: any
+}
 
-export default function AboutWithStats() {
+export default function AboutWithStats({ dict }: Props) {
+  const about = dict.about
+  const stats = about.stats
+
   return (
     <div id="about" className="relative isolate overflow-hidden bg-green-900 py-24 sm:py-32">
-     
-      {/* FONDOS DECORATIVOS */}
+      {/* Fondos decorativos */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-green-200/30 to-transparent"></div>
       <div
         aria-hidden="true"
@@ -40,7 +39,7 @@ export default function AboutWithStats() {
         />
       </div>
 
-      {/* CONTENIDO PRINCIPAL ANIMADO */}
+      {/* Contenido principal animado */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -49,17 +48,14 @@ export default function AboutWithStats() {
         className="mx-auto max-w-7xl px-6 lg:px-8"
       >
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">About Us</h2>
-          <p className="mt-8 text-lg font-medium text-pretty text-left text-green-200 sm:text-xl/8">
-            At <span className="font-semibold text-lime-300">Wicho Landscaping</span>, we bring passion, precision, and professionalism to every outdoor space.
-            With years of experience in garden design, maintenance, and lawn care, we’re committed to helping you create a beautiful,
-            functional, and relaxing environment right outside your door. Whether you need a simple trim or a complete garden makeover,
-            we’re here to deliver results you’ll love — on time and on budget.
+          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">{about.title}</h2>
+          <p className="mt-8 text-lg font-medium text-left text-green-200 sm:text-xl/8">
+            {about.description} <span className="font-semibold text-lime-300"> {about.description2}</span> {about.description3}
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <dl className="mt-16 grid grid-cols-2 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
+            {stats.map((stat: any) => (
               <div key={stat.name} className="flex flex-col-reverse gap-1">
                 <dt className="text-base/7 text-white">{stat.name}</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>

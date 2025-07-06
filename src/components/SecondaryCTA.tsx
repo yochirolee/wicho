@@ -2,12 +2,17 @@
 
 import { motion } from 'framer-motion'
 
-export default function SecondaryCTA() {
+type Props = {
+  dict: any
+}
+
+export default function SecondaryCTA({ dict }: Props) {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="relative isolate overflow-hidden bg-green-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
 
+          {/* SVG decorativo */}
           <svg
             viewBox="0 0 1024 1024"
             aria-hidden="true"
@@ -28,7 +33,7 @@ export default function SecondaryCTA() {
             </defs>
           </svg>
 
-          {/* Texto + Botón: fade + slide desde izquierda */}
+          {/* Texto animado */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -36,22 +41,22 @@ export default function SecondaryCTA() {
             className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left"
           >
             <h2 className="text-3xl font-semibold tracking-tight text-balance text-green-100 sm:text-4xl">
-              Make Your Yard <span className="text-green-600">Stand Out</span>
+              {dict.secondaryCTA.title1} <span className="text-green-600">{dict.secondaryCTA.title2}</span>
             </h2>
             <p className="mt-6 text-lg/8 text-pretty text-gray-200">
-              We’ll make your outdoor space look amazing — and you’ll save.
+              {dict.secondaryCTA.description}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
                 href="tel:7864519573"
                 className="rounded-md bg-green-100 px-3.5 py-2.5 text-sm font-semibold text-green-900 shadow-xs hover:bg-green-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300"
               >
-                Let’s Beautify My Garden
+                {dict.secondaryCTA.button}
               </a>
             </div>
           </motion.div>
 
-          {/* Imagen: zoom in suave */}
+          {/* Imagen animada */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -59,7 +64,7 @@ export default function SecondaryCTA() {
             className="relative mt-12 w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]"
           >
             <img
-              alt="App screenshot"
+              alt="Landscaping sample"
               src="/landscaping1.webp"
               width={1824}
               height={1080}
