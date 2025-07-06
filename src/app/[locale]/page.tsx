@@ -89,13 +89,11 @@ type Dict = {
   };
 }
 
-interface PageProps {
-  params: {
-    locale: string;
-  };
-}
-
-export default async function Home({ params }: PageProps) {
+export default async function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
   const dict: Dict = await getDictionary(params.locale);
 
   return (
