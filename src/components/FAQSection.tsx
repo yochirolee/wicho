@@ -2,8 +2,24 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+type FAQ = {
+  q: string
+  a: string
+}
+
+type FaqDict = {
+  label: string
+  title1: string
+  title2: string
+  questions: FAQ[]
+}
+
+type Dict = {
+  faq: FaqDict
+}
+
 type Props = {
-  dict: any
+  dict: Dict
 }
 
 export default function FAQSection({ dict }: Props) {
@@ -26,7 +42,7 @@ export default function FAQSection({ dict }: Props) {
         </div>
 
         <ul className="basis-1/2">
-          {faqs.map((faq: any, index: number) => (
+          {faqs.map((faq: FAQ, index: number) => (
             <li key={index} className="group border-t border-green-300">
               <button
                 onClick={() => toggleFAQ(index)}
