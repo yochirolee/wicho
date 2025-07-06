@@ -9,7 +9,7 @@ import FAQSection from "../../components/FAQSection";
 import SecondaryCTA from "../../components/SecondaryCTA";
 import Footer from "../../components/Footer";
 
-type Dict = {
+export type Dict = {
   nav: { work: string; services: string; about: string; faq: string; contact: string; }
   hero: { headline: string; subtext: string; quote: string; view: string; }
   offerSection: { headline: string; headline2: string; }
@@ -22,8 +22,14 @@ type Dict = {
   footer: { subheading: string; quickLinksTitle: string; addressLabel: string; hoursLabel: string; emailLabel: string; phoneLabel: string; contactTitle: string; copyright: string }
 }
 
-export default async function Home({ params }: { params: { locale: string } }) {
-  const dict = await getDictionary(params.locale) as Dict;
+interface PageProps {
+  params: {
+    locale: string
+  }
+}
+
+export default async function Home({ params }: PageProps) {
+  const dict = await getDictionary(params.locale) as Dict
 
   return (
     <div className="flex flex-col min-h-screen">
