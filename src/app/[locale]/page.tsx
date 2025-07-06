@@ -10,7 +10,7 @@ import SecondaryCTA from "../../components/SecondaryCTA";
 import Footer from "../../components/Footer";
 
 export default async function Home({ params }: { params: { locale: string } }) {
-  const dict = await getDictionary(params.locale)
+  const dict = await getDictionary(params.locale);
 
   return (
     <div className="flex flex-col min-h-screen">
