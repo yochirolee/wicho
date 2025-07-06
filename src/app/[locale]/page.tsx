@@ -96,7 +96,7 @@ interface PageProps {
 }
 
 export default async function Home({ params }: PageProps) {
-  const dict = await getDictionary(params.locale);
+  const dict: Dict = await getDictionary(params.locale);
 
   return (
     <div className="flex flex-col min-h-screen">
