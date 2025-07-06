@@ -22,14 +22,13 @@ export type Dict = {
   footer: { subheading: string; quickLinksTitle: string; addressLabel: string; hoursLabel: string; emailLabel: string; phoneLabel: string; contactTitle: string; copyright: string }
 }
 
-interface PageProps {
-  params: {
-    locale: string
-  }
-}
-
-export default async function Home({ params }: PageProps) {
-  const dict = await getDictionary(params.locale) as Dict
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale) as Dict;
 
   return (
     <div className="flex flex-col min-h-screen">
