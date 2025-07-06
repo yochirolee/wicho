@@ -16,7 +16,23 @@ const featuresVariants = {
   },
 }
 
-export default function WhyChooseUsSection({ dict }: { dict: any }) {
+type Feature = {
+  name: string
+  description: string
+}
+
+type WhyChooseUs = {
+  title: string
+  headline: string
+  description: string
+  features: Feature[]
+}
+
+type Dict = {
+  whyChooseUs: WhyChooseUs
+}
+
+export default function WhyChooseUsSection({ dict }: { dict: Dict }) {
   const features = dict?.whyChooseUs?.features ?? []
 
   const icons = [Leaf, Sparkles, Phone]
@@ -25,13 +41,13 @@ export default function WhyChooseUsSection({ dict }: { dict: any }) {
     <div className="overflow-hidden bg-green-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          
+
           {/* ANIMATED TEXT SECTION */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            initial="offscreen"
+            whileInView="onscreen"
             viewport={{ once: true }}
+            variants={featuresVariants}
             className="lg:pt-4 lg:pr-8"
           >
             <div className="lg:max-w-lg">
@@ -43,7 +59,7 @@ export default function WhyChooseUsSection({ dict }: { dict: any }) {
                 {dict.whyChooseUs.description}
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base text-green-200 lg:max-w-none">
-                {features.map((feature: any, index: number) => {
+                {features.map((feature: Feature, index: number) => {
                   const Icon = icons[index]
                   return (
                     <div key={feature.name} className="relative pl-10">
@@ -61,7 +77,7 @@ export default function WhyChooseUsSection({ dict }: { dict: any }) {
           <img
             src="/Garden-Landscaping.jpg"
             alt="Landscaping"
-            className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
+            className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-[228px] md:-ml-4 lg:-ml-0"
           />
         </div>
       </div>

@@ -4,8 +4,23 @@ import { ClipboardCheck, CalendarClock, Truck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 
+type Step = {
+  title: string
+  description: string
+}
+
+type HowItWorksDict = {
+  title: string
+  title2: string
+  steps: Step[]
+}
+
+type Dict = {
+  howItWorks: HowItWorksDict
+}
+
 type Props = {
-  dict: any
+  dict: Dict
 }
 
 const cardVariants: Variants = {
@@ -14,7 +29,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring' as const,
+      type: 'spring',
       stiffness: 80,
       damping: 18,
     },
@@ -34,9 +49,9 @@ export default function HowItWorks({ dict }: Props) {
   const steps = dict.howItWorks.steps
 
   const icons = [
-    <ClipboardCheck className="w-10 h-10 text-green-600 mb-4" />,
-    <CalendarClock className="w-10 h-10 text-green-600 mb-4" />,
-    <Truck className="w-10 h-10 text-green-600 mb-4" />,
+    <ClipboardCheck key="clipboard" className="w-10 h-10 text-green-600 mb-4" />,
+    <CalendarClock key="calendar" className="w-10 h-10 text-green-600 mb-4" />,
+    <Truck key="truck" className="w-10 h-10 text-green-600 mb-4" />,
   ]
 
   return (
@@ -53,16 +68,11 @@ export default function HowItWorks({ dict }: Props) {
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
-          {steps.map((step: any, idx: number) => (
+          {steps.map((step, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="
-                bg-green-50 p-6 rounded-xl 
-                shadow-md shadow-gray-300 ring-1 ring-gray-200
-                hover:shadow-lg hover:shadow-green-300
-                text-left transition duration-300
-              "
+              className="bg-green-50 p-6 rounded-xl shadow-md shadow-gray-300 ring-1 ring-gray-200 hover:shadow-lg hover:shadow-green-300 text-left transition duration-300"
             >
               {icons[idx]}
               <h3 className="text-xl font-semibold mb-2">{step.title}</h3>

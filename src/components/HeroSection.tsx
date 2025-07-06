@@ -1,4 +1,3 @@
-// app/[locale]/components/HeroSection.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -6,7 +5,28 @@ import { motion, useAnimation } from 'framer-motion'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-export default function HeroSection({ dict }: { dict: any }) {
+// Tipos explícitos para dict
+type NavDict = {
+  work: string
+  services: string
+  about: string
+  faq: string
+  contact: string
+}
+
+type HeroDict = {
+  headline: string
+  subtext: string
+  quote: string
+  view: string
+}
+
+type Dict = {
+  nav: NavDict
+  hero: HeroDict
+}
+
+export default function HeroSection({ dict }: { dict: Dict }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const textControls = useAnimation()
   const linksControls = useAnimation()

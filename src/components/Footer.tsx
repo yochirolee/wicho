@@ -49,18 +49,38 @@ const getPlatformIconByName = (name: string) => {
   return icons[name] || null;
 };
 
-const Footer: React.FC<{ dict: any }> = ({ dict }) => {
-  const f = dict?.footer;
-  const nav = dict?.nav || {};
+// Definir tipos para nav y footer
+type NavLinks = {
+  [key: string]: string;
+};
 
-  // Mapea claves nav a URLs (ajusta si necesitas otras rutas)
-  const navUrls: Record<string, string> = {
-    work: "#work",
-    services: "#services",
-    about: "#about",
-    faq: "#faq",
-    contact: "#contact",
-  };
+type FooterDict = {
+  subheading: string;
+  quickLinksTitle: string;
+  addressLabel: string;
+  hoursLabel: string;
+  emailLabel: string;
+  phoneLabel: string;
+  contactTitle: string;
+  copyright: string;
+};
+
+type Dict = {
+  footer: FooterDict;
+  nav: NavLinks;
+};
+
+const navUrls: Record<string, string> = {
+  work: "#work",
+  services: "#services",
+  about: "#about",
+  faq: "#faq",
+  contact: "#contact",
+};
+
+const Footer: React.FC<{ dict: Dict }> = ({ dict }) => {
+  const f = dict.footer;
+  const nav = dict.nav;
 
   return (
     <footer className="bg-green-900 text-white py-10">

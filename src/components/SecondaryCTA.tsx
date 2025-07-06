@@ -2,8 +2,19 @@
 
 import { motion } from 'framer-motion'
 
+type SecondaryCTADict = {
+  title1: string
+  title2: string
+  description: string
+  button: string
+}
+
+type Dict = {
+  secondaryCTA: SecondaryCTADict
+}
+
 type Props = {
-  dict: any
+  dict: Dict
 }
 
 export default function SecondaryCTA({ dict }: Props) {
@@ -41,7 +52,8 @@ export default function SecondaryCTA({ dict }: Props) {
             className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left"
           >
             <h2 className="text-3xl font-semibold tracking-tight text-balance text-green-100 sm:text-4xl">
-              {dict.secondaryCTA.title1} <span className="text-green-600">{dict.secondaryCTA.title2}</span>
+              {dict.secondaryCTA.title1}{' '}
+              <span className="text-green-600">{dict.secondaryCTA.title2}</span>
             </h2>
             <p className="mt-6 text-lg/8 text-pretty text-gray-200">
               {dict.secondaryCTA.description}
