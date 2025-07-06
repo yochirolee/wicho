@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import LanguageSwitcher from './LanguageSwitcher'
 
 // Tipos explícitos para dict
 type NavDict = {
@@ -77,6 +78,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                 {item.name}
               </motion.a>
             ))}
+            <LanguageSwitcher />
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -103,13 +105,15 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                   >
                     {item.name}
                   </a>
-                ))}
+                ))}                
                 <a
                   href="tel:7864519573"
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
                 >
                   {dict.hero.quote}
                 </a>
+                <LanguageSwitcher />
+                
               </div>
             </div>
           </DialogPanel>
