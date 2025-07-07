@@ -8,7 +8,6 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await props.params;
-
   const metadataByLocale = {
     es: {
       title: "Servicios de Jardinería en Sarasota - Wicho Landscaping | Diseño, Césped, Riego",
