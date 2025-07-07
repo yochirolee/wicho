@@ -33,9 +33,9 @@ export async function generateMetadata(props: {
         siteName: "Wicho Landscaping",
         images: [
           {
-            url: "https://wicho.vercel.app/en/logo.png",
-            width: 800,
-            height: 600,
+            url: "https://wicho.vercel.app/logo.png",
+            width: 1200,
+            height: 630,
           },
         ],
         locale: "es_ES",
@@ -45,7 +45,7 @@ export async function generateMetadata(props: {
         card: "summary_large_image",
         title: "Servicios de Jardinería en Sarasota - Wicho Landscaping",
         description: "Expertos en jardinería en Sarasota. Diseño de jardines, mulch, césped, iluminación y riego.",
-        images: ["https://wicho.vercel.app/en/logo.png"],
+        images: ["https://wicho.vercel.app/logo.png"],
       },
     },
     en: {
@@ -69,13 +69,13 @@ export async function generateMetadata(props: {
       openGraph: {
         title: "Landscaping Services in Sarasota - Wicho Landscaping",
         description: "Landscaping experts in Sarasota. Garden design, mulch installation, lawn care, lighting, and irrigation systems.",
-        url: "https://wicho.vercel.app/en/",
+        url: "https://wicho.vercel.app/",
         siteName: "Wicho Landscaping",
         images: [
           {
-            url: "https://wicho.vercel.app/en/logo.png",
-            width: 800,
-            height: 600,
+            url: "https://wicho.vercel.app/logo.png",
+            width: 1200,
+            height: 630,
           },
         ],
         locale: "en_US",
@@ -85,7 +85,7 @@ export async function generateMetadata(props: {
         card: "summary_large_image",
         title: "Landscaping Services in Sarasota - Wicho Landscaping",
         description: "Landscaping experts in Sarasota...",
-        images: ["https://wicho.vercel.app/en/logo.png"],
+        images: ["https://wicho.vercel.app/logo.png"],
       },
     },
   };
