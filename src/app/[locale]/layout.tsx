@@ -94,14 +94,14 @@ export async function generateMetadata(props: {
   return metadataByLocale[locale as "es" | "en"];
 }
 
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { locale } = await params;
+  const { locale } = params;
 
   return (
     <html lang={locale}>
