@@ -75,8 +75,8 @@ export default function WhyChooseUsSection({ dict }: { dict: Dict }) {
 
           {/* IMAGE SECTION */}
           <img
-            src="/Garden-Landscaping.jpg"
-            alt="Landscaping"
+            src="/Garden-Landscaping.webp"
+            alt="backyard landscaping ideas"
             className="sm:w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 w-[628px] md:-ml-4 lg:-ml-0"
           />
         </div>

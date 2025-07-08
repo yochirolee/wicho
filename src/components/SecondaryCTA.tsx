@@ -76,7 +76,7 @@ export default function SecondaryCTA({ dict }: Props) {
             className="relative mt-12 w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]"
           >
             <img
-              alt="Landscaping sample"
+              alt="Landscaping Services Sarasota"
               src="/seasonal-garden-maintenance.webp"
               width={1824}
               height={1080}

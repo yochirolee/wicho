@@ -1,15 +1,15 @@
 import React from 'react'
 
 const images = [
-  '/residential-lawn-care-services.jpeg',
-  '/professional-garden-maintenance.jpg',
-  '/mulch-installation-service.jpeg',
-  '/garden-lighting-design-sarasota.jpg',
+  '/residential-lawn-care-services.webp',
+  '/professional-garden-maintenance.webp',
+  '/mulch-installation-service.webp',
+  '/garden-lighting-design-sarasota.webp',
   '/lawn-edging-installation.webp',
-  '/grass-cutting-and-planning.jpeg',
-  '/automated-irrigation-system-installation.jpeg',
-  '/backyard-landscaping-ideas.jpeg',
-  '/sustainable-landscaping-solutions.jpeg',
+  '/grass-cutting-and-planning.webp',
+  '/automated-irrigation-system-installation.webp',
+  '/backyard-landscaping-ideas.webp',
+  '/sustainable-landscaping-solutions.webp',
 ]
 
 type OfferSectionDict = {
