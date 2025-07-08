@@ -60,7 +60,7 @@ export default function SecondaryCTA({ dict }: Props) {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
-                href="tel:7864519573"
+                href="tel:9418794806"
                 className="rounded-md bg-green-100 px-3.5 py-2.5 text-sm font-semibold text-green-900 shadow-xs hover:bg-green-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300"
               >
                 {dict.secondaryCTA.button}

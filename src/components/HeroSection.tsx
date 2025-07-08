@@ -52,7 +52,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <motion.img
-                src="/LogoWicho1.png"
+                src="/LogoWicho2.png"
                 alt="Wicho Landscaping"
                 className="h-12 w-auto"
                 initial={{ opacity: 0, y: -10 }}
@@ -88,7 +88,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <img src="/LogoWicho1.png" alt="Wicho Landscaping" className="h-10 w-auto" />
+                <img src="/LogoWicho2.png" alt="Wicho Landscaping" className="h-10 w-auto" />
               </a>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -110,7 +110,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                   </a>
                 ))}
                 <a
-                  href="tel:7864519573"
+                  href="tel:9418794806"
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
                 >
                   {dict.hero.quote}
@@ -122,7 +122,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
         </Dialog>
       </header>
 
-      <main className="bg-green-700 text-white pt-20 pb-16 sm:pt-28 sm:pb-32">
+      <main className="bg-green-600 text-white pt-20 pb-16 sm:pt-28 sm:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
             {/* Texto */}
@@ -143,7 +143,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
               </motion.p>
               <div className="mt-6 flex items-center justify-center lg:justify-start gap-x-6">
                 <motion.a
-                  href="tel:7864519573"
+                  href="tel:9418794806"
                   className="rounded-md bg-green-100 px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-200"
                   initial={{ opacity: 0, y: 20 }}
                   animate={linksControls}
