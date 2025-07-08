@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
@@ -33,7 +34,7 @@ export async function generateMetadata(props: {
         siteName: "Wicho Landscaping",
         images: [
           {
-            url: "https://wicho.vercel.app/logo.png",
+            url: "https://wicho.vercel.app/logoWicho1.png",
             width: 1200,
             height: 630,
           },
@@ -45,7 +46,7 @@ export async function generateMetadata(props: {
         card: "summary_large_image",
         title: "Servicios de Jardinería en Sarasota - Wicho Landscaping",
         description: "Expertos en jardinería en Sarasota. Diseño de jardines, mulch, césped, iluminación y riego.",
-        images: ["https://wicho.vercel.app/logo.png"],
+        images: ["https://wicho.vercel.app/logoWicho1.png"],
       },
     },
     en: {
@@ -73,7 +74,7 @@ export async function generateMetadata(props: {
         siteName: "Wicho Landscaping",
         images: [
           {
-            url: "https://wicho.vercel.app/logo.png",
+            url: "https://wicho.vercel.app/logoWicho1.png",
             width: 1200,
             height: 630,
           },
@@ -85,7 +86,7 @@ export async function generateMetadata(props: {
         card: "summary_large_image",
         title: "Landscaping Services in Sarasota - Wicho Landscaping",
         description: "Landscaping experts in Sarasota...",
-        images: ["https://wicho.vercel.app/logo.png"],
+        images: ["https://wicho.vercel.app/logoWicho1.png"],
       },
     },
   };
@@ -104,6 +105,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>

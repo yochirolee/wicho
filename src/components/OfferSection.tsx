@@ -1,7 +1,7 @@
 import React from 'react'
 
 const images = [
-  '/landscaping1.webp',
+  '/logo8.jpeg',
   '/landscaping2.jpg',
   '/logo4.jpeg',
   '/landscaping4.jpg',

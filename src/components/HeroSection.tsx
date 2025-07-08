@@ -51,7 +51,10 @@ export default function HeroSection({ dict }: { dict: Dict }) {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <motion.img src="/logo.png" alt="Wicho Landscaping" className="h-10 w-auto"
+              <motion.img
+                src="/LogoWicho1.png"
+                alt="Wicho Landscaping"
+                className="h-12 w-auto"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -85,7 +88,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <img src="/logo.png" alt="Wicho Landscaping" className="h-8 w-auto" />
+                <img src="/logoWicho1.png" alt="Wicho Landscaping" className="h-10 w-auto" />
               </a>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -105,7 +108,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                   >
                     {item.name}
                   </a>
-                ))}                
+                ))}
                 <a
                   href="tel:7864519573"
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-green-900 hover:bg-green-50"
@@ -113,53 +116,64 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                   {dict.hero.quote}
                 </a>
                 <LanguageSwitcher />
-                
               </div>
             </div>
           </DialogPanel>
         </Dialog>
       </header>
 
-      <main className="relative isolate overflow-hidden bg-gradient-to-b from-green-800 to-green-600 text-white pt-28 pb-32">
-        <div className="mx-auto max-w-2xl px-6 text-center">
-          <motion.h1
-            className="text-4xl font-bold tracking-tight sm:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={textControls}
-          >
-            {dict.hero.headline}
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-lg leading-8 text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={textControls}
-          >
-            {dict.hero.subtext}
-          </motion.p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <motion.a
-              href="tel:7864519573"
-              className="rounded-md bg-green-100 px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-100"
-              initial={{ opacity: 0, y: 20 }}
-              animate={linksControls}
-            >
-              {dict.hero.quote}
-            </motion.a>
-            <motion.a
-              href="#gallery"
-              className="text-sm font-semibold text-white hover:underline"
-              initial={{ opacity: 0, y: 20 }}
-              animate={linksControls}
-            >
-              {dict.hero.view} <span aria-hidden="true">→</span>
-            </motion.a>
+      <main className="bg-green-700 text-white pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+            {/* Texto */}
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <motion.h1
+                className="text-4xl font-bold tracking-tight sm:text-6xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={textControls}
+              >
+                {dict.hero.headline}
+              </motion.h1>
+              <motion.p
+                className="mt-6 text-lg leading-8 text-white"
+                initial={{ opacity: 0, y: 20 }}
+                animate={textControls}
+              >
+                {dict.hero.subtext}
+              </motion.p>
+              <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
+                <motion.a
+                  href="tel:7864519573"
+                  className="rounded-md bg-green-100 px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={linksControls}
+                >
+                  {dict.hero.quote}
+                </motion.a>
+                <motion.a
+                  href="#gallery"
+                  className="text-sm font-semibold text-white hover:underline"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={linksControls}
+                >
+                  {dict.hero.view} <span aria-hidden="true">→</span>
+                </motion.a>
+              </div>
+            </div>
+
+            {/* Imagen */}
+            <div className="lg:w-1/2">
+              <motion.img
+                src="/Garden-Landscaping1.jpeg"
+                alt="Landscaping"
+                className="w-full h-auto max-h-64 sm:max-h-full rounded-xl shadow-lg object-cover"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+              />
+            </div>
           </div>
         </div>
-        <img
-          src="/Garden-Landscaping.jpg"
-          alt="Landscaping"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30"
-        />
       </main>
     </div>
   )
