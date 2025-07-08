@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "Transforma tu espacio exterior con Wicho Landscaping",
-    "subtext": "Expertos en diseño de jardines, mantenimiento y sistemas de riego que hacen realidad el jardín de tus sueños.",
+    "subtext": "Expertos en diseño de jardines, mantenimiento de áreas verdes y sistemas de riego en Sarasota y alrededores.",
     "quote": "Solicita una cotización gratis",
     "view": "Ver Nuestro Trabajo"
   },
@@ -38,7 +38,7 @@
     },
     {
       "title": "Diseño de Bordes de Césped",
-      "description": "Bordes de césped nítidos y limpios que realzan tu patio."
+      "description": "Instalación y diseño de bordes de césped para patios residenciales, ideal para definir zonas verdes con precisión."
     },
     {
       "title": "Corte y Planificación de Césped",
@@ -53,7 +53,7 @@
 "whyChooseUs": {
     "title": "¿Por qué elegirnos?",
     "headline": "Excelencia en cada jardín",
-    "description": "Con Wicho Landscaping, eliges un equipo comprometido con la calidad, el cuidado y el servicio personalizado.",
+    "description": "Con Wicho Landscaping, una empresa local de jardinería en Sarasota, eliges un equipo dedicado a la calidad, la atención al detalle y el servicio personalizado en cada proyecto.",
     "features": [
       {
         "name": "Paisajismo Profesional",
@@ -91,7 +91,7 @@
     "title": "Acerca de Nosotros",
     "description": "En ",
     "description2": "Wicho Landscaping",
-    "description3": " aportamos pasión, precisión y profesionalismo a cada espacio exterior. Con años de experiencia en diseño de jardines, mantenimiento y cuidado del césped, estamos comprometidos en ayudarte a crear un ambiente hermoso, funcional y relajante justo en la puerta de tu casa. Ya sea que necesites un simple recorte o una renovación completa del jardín, estamos aquí para entregar resultados que te encantarán, a tiempo y dentro del presupuesto.",
+    "description3": " aportamos pasión, precisión y profesionalismo a cada espacio exterior. Con años de experiencia en diseño de jardines, mantenimiento y cuidado del césped, estamos comprometidos en ayudarte a crear un ambiente hermoso, funcional y relajante justo en la puerta de tu casa. Ya sea que necesites un simple recorte o una renovación completa del jardín, estamos aquí para entregar resultados que te encantarán. Ubicados en Sarasota, ayudamos a familias del sur de Florida a transformar sus jardines. Contáctanos hoy para comenzar tu proyecto.",
     "stats": [
       { "name": "Clientes Satisfechos", "value": "250+" },
       { "name": "Jardines Diseñados", "value": "180+" },
@@ -110,7 +110,7 @@
     },
     {
       "q": "¿Cómo solicito una cotización gratuita?",
-      "a": "Puedes solicitar una cotización gratuita llenando nuestro formulario de contacto o llamando al (305) 851-3004 o (754) 313-3140."
+      "a": "Puedes solicitar una cotización gratuita llenando nuestro formulario de contacto o llamando al (941) 879-4806."
     },
     {
       "q": "¿Atienden mi área?",
@@ -121,8 +121,8 @@
 "secondaryCTA": {
   "title1": "Haz que tu jardín",
   "title2": "resalte",
-  "description": "Haremos que tu espacio exterior luzca increíble — y además ahorrarás.",
-  "button": "Embellece mi jardín"
+  "description": "Haremos que tu espacio exterior luzca increíble — sin gastar de más.",
+  "button": "Quiero un jardín hermoso"
 },
 "footer": {
   "subheading": "Transformamos tu jardín en un espacio único y natural.",

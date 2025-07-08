@@ -164,7 +164,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
             {/* Imagen */}
             <div className="lg:w-1/2">
               <motion.img
-                src="/Garden-Landscaping1.jpeg"
+                src="/landscaping-garden-design-sarasota.jpeg"
                 alt="Landscaping"
                 className="w-full h-auto max-h-64 sm:max-h-full rounded-xl shadow-lg object-cover"
                 initial={{ opacity: 0, y: 20 }}

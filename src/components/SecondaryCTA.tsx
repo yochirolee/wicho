@@ -77,7 +77,7 @@ export default function SecondaryCTA({ dict }: Props) {
           >
             <img
               alt="Landscaping sample"
-              src="/landscaping1.webp"
+              src="/seasonal-garden-maintenance.webp"
               width={1824}
               height={1080}
               className="absolute inset-0 w-full h-full object-cover rounded-md shadow-lg ring-1 ring-green-900/30"
