@@ -88,7 +88,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <img src="/logoWicho1.png" alt="Wicho Landscaping" className="h-10 w-auto" />
+                <img src="/LogoWicho1.png" alt="Wicho Landscaping" className="h-10 w-auto" />
               </a>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -122,7 +122,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
         </Dialog>
       </header>
 
-      <main className="bg-green-700 text-white pt-20 pb-24 sm:pt-28 sm:pb-32">
+      <main className="bg-green-700 text-white pt-20 pb-16 sm:pt-28 sm:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
             {/* Texto */}
@@ -135,13 +135,13 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                 {dict.hero.headline}
               </motion.h1>
               <motion.p
-                className="mt-6 text-lg leading-8 text-white"
+                className="mt-4 text-lg leading-8 text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={textControls}
               >
                 {dict.hero.subtext}
               </motion.p>
-              <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
+              <div className="mt-6 flex items-center justify-center lg:justify-start gap-x-6">
                 <motion.a
                   href="tel:7864519573"
                   className="rounded-md bg-green-100 px-4 py-2.5 text-sm font-semibold text-green-700 shadow-sm hover:bg-green-200"

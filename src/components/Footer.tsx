@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const siteDetails = {
   siteName: "Wicho Landscaping",
-  logoSrc: "/logo.png",
+  logoSrc: "/LogoWicho1.png",
 };
 
 const footerDetails = {
