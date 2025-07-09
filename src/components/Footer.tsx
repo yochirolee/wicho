@@ -108,7 +108,10 @@ const Footer: React.FC<{ dict: Dict }> = ({ dict }) => {
   const nav = dict.nav;
 
   return (
-    <footer className="bg-gradient-to-b from-green-700 via-green-800 to-green-900 text-white py-10">
+    <footer className="bg-gradient-to-br from-green-600 to-green-900 text-white py-10"
+      style={{
+        backgroundImage: 'linear-gradient(135deg, #16a34a 5%, #022c22 80%)',
+      }} >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo y subtítulo */}
         <div>
