@@ -109,7 +109,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
         </Dialog>
       </header>
 
-      <main className="bg-gradient-to-b from-green-600 via-green-800 to-green-900 text-white pt-20 pb-16 sm:pt-28 sm:pb-32">
+      <main className="bg-gradient-to-b from-green-700 via-green-800 to-green-900 text-white pt-20 pb-16 sm:pt-28 sm:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
             {/* Texto */}
