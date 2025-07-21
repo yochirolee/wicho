@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const siteDetails = {
   siteName: "Wicho Landscaping",
-  logoSrc: "/LogoWicho2.png",
+  logoSrc: "/LogoWicho3.png",
 };
 
 const footerDetails = {
@@ -119,7 +119,7 @@ const Footer: React.FC<{ dict: Dict }> = ({ dict }) => {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-24 h-auto object-contain"
+            className="w-20 h-auto rounded-xl object-contain"
           />
             <h3 className="text-xl font-semibold cursor-pointer">{siteDetails.siteName}</h3>
           </Link>

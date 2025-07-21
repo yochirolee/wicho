@@ -51,7 +51,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <motion.img src="/LogoWicho2.png" alt="Wicho Landscaping" className="h-10 w-auto"
+              <motion.img src="/LogoWicho3.png" alt="Wicho Landscaping" className="w-20 h-auto rounded-xl"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -85,7 +85,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full bg-white p-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <img src="/LogoWicho2.png" alt="Wicho Landscaping" className="h-8 w-auto" />
+                <img src="/LogoWicho3.png" alt="Wicho Landscaping" className="w-20 h-auto rounded-xl" />
               </a>
               <button
                 onClick={() => setMobileMenuOpen(false)}
