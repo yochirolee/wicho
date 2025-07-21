@@ -119,7 +119,7 @@ const Footer: React.FC<{ dict: Dict }> = ({ dict }) => {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-20 h-auto rounded-xl object-contain"
+            className="w-12 sm:w-14 md:w-16 lg:w-18 xl:w-20 h-auto rounded-xl object-contain"
           />
             <h3 className="text-xl font-semibold cursor-pointer">{siteDetails.siteName}</h3>
           </Link>
