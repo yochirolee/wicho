@@ -8,6 +8,8 @@ import OfferSection from "../../components/OfferSection";
 import FAQSection from "../../components/FAQSection";
 import SecondaryCTA from "../../components/SecondaryCTA";
 import Footer from "../../components/Footer";
+import ProductSection from "../../components/ProductSection";
+import Cart from "../../components/Cart";
 
 export type Dict = {
   nav: { work: string; services: string; about: string; faq: string; contact: string; }
@@ -34,6 +36,8 @@ export default async function Home({
     <div className="flex flex-col min-h-screen">
       <HeroSection dict={dict} />
       <OfferSection dict={dict} />
+      <ProductSection />
+      <Cart />
       <SocialProof dict={dict} />
       <FeaturesSection dict={dict} />
       <HowItWorks dict={dict} />

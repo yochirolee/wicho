@@ -5,6 +5,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageSwitcher from './LanguageSwitcher'
+import CartIcon from "@/components/CartIcon";
 
 // Tipos explícitos para dict
 type NavDict = {
@@ -79,6 +80,8 @@ export default function HeroSection({ dict }: { dict: Dict }) {
               </motion.a>
             ))}
             <LanguageSwitcher />
+              {/* Carrito */}
+              <CartIcon />
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -113,6 +116,7 @@ export default function HeroSection({ dict }: { dict: Dict }) {
                   {dict.hero.quote}
                 </a>
                 <LanguageSwitcher />
+                <CartIcon />
                 
               </div>
             </div>
