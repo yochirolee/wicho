@@ -7,7 +7,7 @@ interface Product {
   name: string;
   price: number;
   quantity: number;
-  imageSrc: string;
+  imageSrc?: string;
 }
 
 interface CartContextType {
