@@ -133,5 +133,23 @@
   "phoneLabel": "Phone",
   "contactTitle": "Contact Us",
   "copyright": "All rights reserved."
-}
+},
+"checkout": {
+    "title": "Checkout Now",
+    "description": "Review your order before completing the payment.",
+    "product": "Product",
+    "quantity": "Quantity",
+    "total": "Total",
+    "pay": "Proceed to Payment"
+  },
+  "success": {
+    "title": "Payment Successful",
+    "message": "Thank you for your purchase. Your payment has been received.",
+    "continue": "Return to Home"
+  },
+  "error": {
+    "title": "Payment Error",
+    "message": "There was a problem processing your payment. Please try again.",
+    "retry": "Try Again"
+  }
 }

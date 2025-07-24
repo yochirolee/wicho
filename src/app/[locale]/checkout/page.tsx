@@ -1,24 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { loadStripe } from '@stripe/stripe-js';
+import { CreditCard } from 'lucide-react';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function CheckoutPage() {
   const { cartItems } = useCart();
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-  const [country, setCountry] = useState("United States");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  // Form states
-  const [email, setEmail] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [expiry, setExpiry] = useState("");
-  const [cvc, setCvc] = useState("");
-  const [nameOnCard, setNameOnCard] = useState("");
-  const [zip, setZip] = useState("");
-
-  const countries = ["United States", "China", "Russia", "UK"];
 
   return (
     <div className="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
@@ -99,6 +89,41 @@ export default function CheckoutPage() {
           {/* Checkout form */}
           <div className="p-8 bg-gray-100 dark:bg-gray-800 flex flex-col lg:w-full xl:w-3/5 rounded-lg">
             <button
+              onClick={async () => {
+                const stripe = await stripePromise;
+
+                if (cartItems.length === 0) {
+                  alert('Your cart is empty.');
+                  return;
+                }
+
+                try {
+                  const response = await fetch('/api/checkout_sessions', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ items: cartItems }),
+                  });
+
+                  const data = await response.json();
+                  if (data.url) {
+                    window.location.href = data.url;
+                  } else {
+                    alert('Something went wrong. Please try again.');
+                  }
+                } catch (error) {
+                  console.error(error);
+                  alert('Checkout failed. Please try again.');
+                }
+              }}
+              className="border border-transparent hover:border-gray-300 bg-gray-900 dark:bg-white dark:hover:bg-gray-900 dark:hover:border-gray-900 dark:text-gray-900 dark:hover:text-white hover:bg-white text-white hover:text-gray-900 flex flex-row justify-center items-center space-x-2 py-4 rounded w-full mb-4"
+            >
+              <CreditCard size={16} className="text-current" />
+              <p className="text-base leading-4">Pay with Card ${total.toFixed(2)}</p>
+            </button> 
+
+            <button
               className="border border-transparent hover:border-gray-300 bg-gray-900 dark:bg-white dark:hover:bg-gray-900 dark:hover:border-gray-900 dark:text-gray-900 dark:hover:text-white hover:bg-white text-white hover:text-gray-900 flex flex-row justify-center items-center space-x-2 py-4 rounded w-full mb-6"
               onClick={() => alert("Pago con PayPal no implementado")}
             >
@@ -119,101 +144,8 @@ export default function CheckoutPage() {
                   fill="currentColor"
                 />
               </svg>
-              <p className="text-base leading-4">Pay with PayPal</p>
-            </button>
-
-            <div className="flex flex-row justify-center items-center mb-6">
-              <hr className="border w-full" />
-              <p className="flex flex-shrink-0 px-4 text-base leading-4 text-gray-600 dark:text-white">or pay with card</p>
-              <hr className="border w-full" />
-            </div>
-
-            <input
-              type="email"
-              placeholder="Email"
-              className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600 mb-6"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-
-            <label className="text-base leading-4 text-gray-800 dark:text-gray-50">Card details</label>
-            <div className="mt-2 flex flex-col">
-              <input
-                type="text"
-                placeholder="0000 1234 6549 15151"
-                className="border rounded-tl rounded-tr border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
-              />
-              <div className="flex flex-row">
-                <input
-                  type="text"
-                  placeholder="MM/YY"
-                  className="border rounded-bl border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                  value={expiry}
-                  onChange={(e) => setExpiry(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="CVC"
-                  className="border rounded-br border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                  value={cvc}
-                  onChange={(e) => setCvc(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Name on card</label>
-            <input
-              type="text"
-              placeholder="Name on card"
-              className="border rounded border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600 mt-2"
-              value={nameOnCard}
-              onChange={(e) => setNameOnCard(e.target.value)}
-            />
-
-            <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Country or region</label>
-            <div className="relative mt-2">
-              <button
-                type="button"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-left border rounded-tl rounded-tr border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600 bg-white"
-              >
-                {country}
-              </button>
-
-              {dropdownOpen && (
-                <div className="absolute z-10 w-full bg-gray-50 text-gray-600 flex flex-col">
-                  {countries.map((c) => (
-                    <div
-                      key={c}
-                      onClick={() => {
-                        setCountry(c);
-                        setDropdownOpen(false);
-                      }}
-                      className="cursor-pointer hover:bg-gray-800 hover:text-white px-4 py-2"
-                    >
-                      {c}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <input
-              type="text"
-              placeholder="ZIP"
-              className="border rounded-bl rounded-br border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600 mt-4"
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-            />
-
-            <button
-              onClick={() => alert("Pago simulado completado")}
-              className="mt-8 border border-transparent hover:border-gray-300 dark:bg-white dark:hover:bg-gray-900 dark:text-gray-900 dark:hover:text-white dark:border-transparent bg-gray-900 hover:bg-white text-white hover:text-gray-900 flex justify-center items-center py-4 rounded w-full"
-            >
               <p className="text-base leading-4">Pay ${total.toFixed(2)}</p>
-            </button>
+            </button>           
           </div>
         </div>
       </div>

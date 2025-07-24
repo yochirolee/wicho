@@ -133,5 +133,23 @@
   "phoneLabel": "Teléfono",
   "contactTitle": "Contáctanos",
   "copyright": "Todos los derechos reservados."
+},
+"checkout": {
+  "title": "Pagar ahora",
+  "description": "Revisa tu orden antes de completar el pago.",
+  "product": "Producto",
+  "quantity": "Cantidad",
+  "total": "Total",
+  "pay": "Proceder al pago"
+},
+"success": {
+  "title": "Pago exitoso",
+  "message": "Gracias por tu compra. Se ha recibido tu pago correctamente.",
+  "continue": "Volver al inicio"
+},
+"error": {
+  "title": "Error en el pago",
+  "message": "Hubo un problema al procesar tu pago. Inténtalo nuevamente.",
+  "retry": "Reintentar"
 }
 }
