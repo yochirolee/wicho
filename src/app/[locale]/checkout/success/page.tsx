@@ -1,6 +1,5 @@
 // app/[locale]/checkout/success/page.tsx
 import { getDictionary } from '@/lib/dictionaries'
-import { Locale } from '@/i18n'
 import SuccessClient from './SuccessClient'  
 
 type Props = {
