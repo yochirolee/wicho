@@ -11,6 +11,7 @@ export default function ProductSection() {
     name: "Pasto sintético",
     price: 29.99,
     quantity: 1,
+    imageSrc: "/pasto.jpg",
   };
 
   const handleAddToCart = () => {
