@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 interface Product {
   id: string;
@@ -14,6 +14,8 @@ interface CartContextType {
   cartItems: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
+  increaseQuantity: (id: string) => void;
+  decreaseQuantity: (id: string) => void;
   isCartOpen: boolean;
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -21,8 +23,27 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<Product[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);  // <-- Mueve aquí el estado
+  const [cart, setCart] = useState<Product[]>([]); // siempre empieza vacío
+
+  useEffect(() => {
+    const saved = localStorage.getItem("cart");
+    if (saved) {
+      setCart(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Guardar carrito en localStorage cada vez que cambie
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
 
   const addToCart = (product: Product) => {
     setCart((prevCart) => {
@@ -44,9 +65,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const increaseQuantity = (id: string) => {
+    setCart((currentItems) =>
+      currentItems.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (id: string) => {
+    setCart((currentItems) =>
+      currentItems
+        .map(item =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems: cart, addToCart, removeFromCart, isCartOpen, setIsCartOpen }}
+      value={{ cartItems: cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, isCartOpen, setIsCartOpen }}
     >
       {children}
     </CartContext.Provider>

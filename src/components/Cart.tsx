@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 
 export default function CartDrawer() {
-  const { cartItems, removeFromCart, isCartOpen, setIsCartOpen } = useCart();
+  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity, isCartOpen, setIsCartOpen } = useCart();
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const pathname = usePathname();
@@ -34,34 +34,44 @@ export default function CartDrawer() {
 
                 {/* Lista de productos */}
                 <div className="mt-8 flow-root flex-grow">
-                  {cartItems.length === 0 ? (
-                    <p className="text-center text-gray-500">Tu carrito está vacío.</p>
-                  ) : (
-                    <ul className="-my-6 divide-y divide-gray-200">
-                      {cartItems.map((item) => (
-                        <li key={item.id} className="flex py-6">
-                          <div className="w-24 h-24 overflow-hidden rounded-md border border-gray-200">
-                            <img src={item.imageSrc ?? '/pasto.jpg'} alt={item.name} className="w-full h-full object-cover" />
+                {cartItems.map((item) => (
+                    <li key={item.id} className="flex py-6">
+                      <div className="w-24 h-24 overflow-hidden rounded-md border border-gray-200">
+                        <img src={item.imageSrc ?? '/pasto.jpg'} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="ml-4 flex flex-1 flex-col">
+                        <div className="flex justify-between text-base font-medium text-gray-900">
+                          <h3>{item.name}</h3>
+                          <p>${item.price.toFixed(2)}</p>
+                        </div>
+                        <div className="mt-1 text-sm text-gray-500 flex items-center space-x-4">
+                          <span>Cantidad: {item.quantity}</span>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => decreaseQuantity(item.id)}
+                              className="px-2 py-1 border rounded hover:bg-gray-200"
+                            >
+                              -
+                            </button>
+                            <button
+                              onClick={() => increaseQuantity(item.id)}
+                              className="px-2 py-1 border rounded hover:bg-gray-200"
+                            >
+                              +
+                            </button>
                           </div>
-                          <div className="ml-4 flex flex-1 flex-col">
-                            <div className="flex justify-between text-base font-medium text-gray-900">
-                              <h3>{item.name}</h3>
-                              <p>${item.price.toFixed(2)}</p>
-                            </div>
-                            <p className="mt-1 text-sm text-gray-500">Cantidad: {item.quantity}</p>
-                            <div className="flex flex-1 items-end justify-between text-sm">
-                              <button
-                                onClick={() => removeFromCart(item.id)}
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
-                              >
-                                Eliminar
-                              </button>
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                        </div>
+                        <div className="flex flex-1 items-end justify-between text-sm mt-2">
+                          <button
+                            onClick={() => removeFromCart(item.id)}
+                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                          >
+                            Eliminar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
                 </div>
 
                 {/* Footer */}
