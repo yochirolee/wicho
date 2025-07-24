@@ -1,10 +1,8 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { loadStripe } from '@stripe/stripe-js';
 import { CreditCard } from 'lucide-react';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function CheckoutPage() {
   const { cartItems } = useCart();
@@ -90,8 +88,6 @@ export default function CheckoutPage() {
           <div className="p-8 bg-gray-100 dark:bg-gray-800 flex flex-col lg:w-full xl:w-3/5 rounded-lg">
             <button
               onClick={async () => {
-                const stripe = await stripePromise;
-
                 if (cartItems.length === 0) {
                   alert('Your cart is empty.');
                   return;
