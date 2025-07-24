@@ -42,6 +42,7 @@ export type Dict = {
     title: string;
     message: string;
     retry: string;
+    home: string;
   };
 }
 

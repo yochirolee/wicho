@@ -150,6 +150,7 @@
   "error": {
     "title": "Payment Error",
     "message": "There was a problem processing your payment. Please try again.",
-    "retry": "Try Again"
+    "retry": "Try Again",
+    "home": "Home"
   }
 }

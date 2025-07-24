@@ -150,6 +150,7 @@
 "error": {
   "title": "Error en el pago",
   "message": "Hubo un problema al procesar tu pago. Inténtalo nuevamente.",
-  "retry": "Reintentar"
+  "retry": "Reintentar",
+  "home": "Inicio"
 }
 }
