@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
+import type { Dict } from '../../page' 
 
 export default function SuccessClient({
   dict,
   locale,
 }: {
-  dict: any
+  dict: Dict
   locale: string
 }) {
   useEffect(() => {
