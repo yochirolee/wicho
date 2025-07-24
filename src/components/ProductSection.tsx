@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 import { toast } from "sonner";
 
 export default function ProductSection() {
-  const { addToCart } = useCart();
+  const { addToCart, setIsCartOpen } = useCart();
 
   const product = {
     id: "pasto-001",
@@ -18,6 +18,11 @@ export default function ProductSection() {
     addToCart(product);
     toast.success("Producto agregado al carrito");
   };
+
+  const openCartDrawer = () => {
+    setIsCartOpen(true);
+  };
+
   return (
     <section id="prod" className="py-20 px-4 bg-gray-50">
       <div className="max-w-4xl mx-auto text-center">
@@ -36,8 +41,8 @@ export default function ProductSection() {
             className="rounded-lg shadow-lg"
           />
         </div>
-
-        <p className="text-2xl font-bold text-green-700 mt-6">$29.99</p>
+        <p className="text-2xl font-bold text-green-700 mt-6">{product.name}</p>
+        <p className="text-2xl font-bold text-green-700 mt-2">${product.price.toFixed(2)}</p>
 
         <div className="mt-4">
           <button
@@ -45,6 +50,16 @@ export default function ProductSection() {
             className="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition"
           >
             Agregar al carrito
+          </button>
+        </div>
+
+        <div className="mt-3">
+          <button
+            onClick={openCartDrawer}
+            className="text-green-600 hover:underline"
+            type="button"
+          >
+            Ver carrito
           </button>
         </div>
       </div>

@@ -18,6 +18,7 @@ interface CartContextType {
   decreaseQuantity: (id: string) => void;
   isCartOpen: boolean;
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -59,7 +60,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         return [...prevCart, product];
       }
     });
-  };
+
+    };
 
   const removeFromCart = (id: string) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
@@ -83,9 +85,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
+  const clearCart = () => {
+    setCart([]);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("cart");
+    }
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems: cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, isCartOpen, setIsCartOpen }}
+      value={{ cartItems: cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, isCartOpen, setIsCartOpen, clearCart }}
     >
       {children}
     </CartContext.Provider>
